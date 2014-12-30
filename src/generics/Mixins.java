@@ -35,13 +35,15 @@ class BasicImp implements Basic {
 }
 
 class Mixin extends BasicImp
-implements TimeStamped, SerialNumbered {
+implements TimeStamped, SerialNumbered, NewColored {
     private TimeStamped timeStamped = new TimeStampedImp();
     private SerialNumbered serialNumbered = new SerialNumberedImp();
+    private NewColoredImp n = new NewColoredImp();
     public long getStamp() { return timeStamped.getStamp(); }
     public long getSerialNumber() {
         return serialNumbered.getSerialNumber();
     }
+    public String getColor() { return n.getColor(); }
 }
 
 public class Mixins {
